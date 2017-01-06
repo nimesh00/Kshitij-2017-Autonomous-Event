@@ -1,3 +1,3 @@
-# zine_autonomous
-a repo for our zine files
-Test change
+# Zine_Autonomous_Event_[Kshitij 2017]
+A repository for our project files.
+
