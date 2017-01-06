@@ -2,41 +2,39 @@ import cv2
 import numpy as np
 import serial
 
-ser=serial.Serial('')
+ser=serial.Serial('') #Selects the default active COM port, else syntax is ('COMx',BAUDRATE)
 
-cap=cv2.VideoCapture(0)
+cap=cv2.VideoCapture(0) 
 
-ly=[20,100,30]
+#Yellow
+ly=[20,100,30] 
 uy=[40,255,255]
-
-lb=[9,95,95]
-ub=[17,255,255]
-
+#Brown
+lb=[9,95,95]ub=[17,255,255]
+#Pink
 lp=[125,120,30]
 up=[255,255,255]
-
+#Blue
 lbl=[100,150,0]
 ubl=[120,255,255]
 
-a=[[[1,0]]]
+a=[[[1,0]]] 
 b=[[[0,0]]]
-
 p=[[[1,0]]]
 bl=[[[0,1]]]
 cx=[1]
 cy=[0]
-px=[0]
-py=[0]
+px=[0]py=[0]
 
 c=[]
 
 while True:
     ret,frame=cap.read()
-    hsv=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
-    frame=cv2.GaussianBlur(frame,(9,9),0)
-    lowery=np.array(ly)
-    uppery=np.array(uy)
-    mask=cv2.inRange(hsv,lowery,uppery)
+    hsv=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV) #Converts the frame from BGR to HSV
+    frame=cv2.GaussianBlur(frame,(9,9),0) #Experimental.
+    lowery=np.array(ly) #appends the lower values to an array.
+    uppery=np.array(uy) #appends the higher values to an array.
+    mask=cv2.inRange(hsv,lowery,uppery) 
     res=cv2.bitwise_and(frame,frame,mask=mask)
     gray=cv2.cvtColor(res,cv2.COLOR_BGR2GRAY)
     ret,thresh=cv2.threshold(gray,127,255,1)
@@ -48,7 +46,7 @@ while True:
                 c=c+[cnt[0]]
                 cv2.drawContours(frame,[cnt],-1,(255,0,0))
                
-    lower_blue=np.array(lb)
+   lower_ble=np.array(lb)
     upper_blue=np.array(ub)
     mask=cv2.inRange(hsv,lower_blue,upper_blue)
     res=cv2.bitwise_and(frame,frame,mask=mask)
