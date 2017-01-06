@@ -1,21 +1,9 @@
 /**
     DCMotorBot - A simple library to control bots made using 2 simple DC Motors
-
-    http://hardwarefun.com/projects/dc-motor-bot
-*/
-
-/*
- * Copyright 2011  Sudar Muthu  (email : sudar@sudarmuthu.com)
- * ----------------------------------------------------------------------------
- * "THE BEER-WARE LICENSE" (Revision 42):
- * <sudar@sudarmuthu.com> wrote this file. As long as you retain this notice you
- * can do whatever you want with this stuff. If we meet some day, and you think
- * this stuff is worth it, you can buy me a beer or coffee in return - Sudar
- * ----------------------------------------------------------------------------
- */
-
+    MODIFIED FOR NO PWN MOVEMENT FOR THE KTJ EVENT. USE THE DATA RATE SPECIFIED BY THE DELAY FUNCTION TO VARY THE SPEED OF THE MOTORS.
+    REPLACE THE PRE EXISTING CPP FILE WITH THIS ONE FOR THE FUNCTIONS TO WORK. TESTED WITH THE L293D.
+    */
 #include "DCMotorBot.h"
-
 /**
  * Full Constructor
  */
