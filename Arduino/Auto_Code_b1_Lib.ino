@@ -1,19 +1,30 @@
-//Libraries
 #include <DCMotorBot.h> //Library That Drives the Bot. Modify the library if necessary as it uses PWM.
-//Hogaya Kaam
+int inByte; //Serial Data from Python
+DCMotorBot bot;
 
 //MOTOR L - 44,45
 //MOTOR R - 46,47
-int inByte;
-
-DCMotorBot bot;
 
 void setup() 
+
 {     
     bot.setControlPins(44, 45, 46, 47); //L-->R in Sequence.
     Serial.begin(9600);
-    pinMode(13, OUTPUT);
-        }
+    pinMode(13, OUTPUT); //Resource LED.
+    
+    //Run a quick test of the bot's motors.
+        
+    bot.moveForward();
+    delay(800);
+    bot.turnLeft();
+    delay(800);
+    bot.turnRight();
+    delay(800);
+    bot.moveBackward();
+    delay(800);
+    bot.stop();
+        
+}
 
 
 void loop() {
@@ -21,7 +32,6 @@ void loop() {
 if(Serial.available() > 0) { // A byte is ready to receive
 inByte = Serial.read();
 
-//Acts upon Pyserial Commands.
 if(inByte == 'f')
 {
   bot.moveForward();
