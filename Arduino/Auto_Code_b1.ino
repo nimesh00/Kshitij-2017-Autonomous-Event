@@ -12,8 +12,7 @@ void setup()
 {     
     bot.setControlPins(44, 45, 46, 47); //L-->R in Sequence.
     Serial.begin(9600);
-    Serial.println("Ready");
-    pinMode(51, OUTPUT);
+    pinMode(13, OUTPUT);
         }
 
 
@@ -39,9 +38,9 @@ if(inByte == 'f')
 
 else if (inByte == 'l')
   {
-  digitalWrite(51, HIGH);
+  digitalWrite(13, HIGH);
   delay(1000);
-  digitalWrite(51,LOW);
+  digitalWrite(13,LOW);
 }
 
 else if (inByte == 'b')
