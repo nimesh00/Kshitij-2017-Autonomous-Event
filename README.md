@@ -1,7 +1,7 @@
 # Zine_Autonomous_Event_[Kshitij 2017]
 A repository for our project files and code.
 
-__Use NoLib files if you have problems / haven't installed the necessary libraries.
+__Use NoLib files if you have problems / haven't installed the necessary libraries.__
 
 #**Arenas**
 
