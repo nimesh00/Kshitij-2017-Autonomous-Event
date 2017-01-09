@@ -14,6 +14,7 @@ void setup()
     
     //Run a quick test of the bot's motors.
         
+    /*
     bot.moveForward();
     delay(800);
     bot.turnLeft();
@@ -23,7 +24,7 @@ void setup()
     bot.moveBackward();
     delay(800);
     bot.stop();
-        
+    */    
 }
 
 
@@ -35,14 +36,14 @@ inByte = Serial.read();
 if(inByte == 'f')
 {
   bot.moveForward();
-  delay(5);
+  delay(25);
   bot.stop();
    }
 
   else if (inByte == 'r')
   {
   bot.turnLeft();
-  delay(5);
+  delay(25);
   bot.stop();
 }
 
@@ -56,7 +57,7 @@ else if (inByte == 'l')
 else if (inByte == 'b')
   {
   bot.moveBackward();
-  delay(5);
+  delay(25);
   bot.stop();
 }
 }
