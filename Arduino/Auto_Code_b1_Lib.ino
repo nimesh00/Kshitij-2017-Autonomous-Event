@@ -18,7 +18,7 @@ void setup()
     delay(800);
     bot.turnLeft();
     delay(800);
-    bot.turnRight();
+    bot.turnLeft();
     delay(800);
     bot.moveBackward();
     delay(800);
@@ -41,7 +41,7 @@ if(inByte == 'f')
 
   else if (inByte == 'r')
   {
-  bot.turnRight();
+  bot.turnLeft();
   delay(5);
   bot.stop();
 }
